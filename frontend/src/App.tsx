@@ -6,24 +6,27 @@ const teams = data['teams'];
 
 function Welcome(){
   return(
-    <h1>Welcome to MARCH MADNESS</h1>
+    <h1>MARCH MADNESS</h1>
   );
 }
 
 
-class Team extends React.Component{
+class Team extends React.Component  <{name: string; school: string; city: string; state: string}> {
+ 
   render() {
 
     const oneTeam = this.props;
-    // <{name: string; city:string;}>
+    
 
     return(
-      <div>
-        <br />
-        <h4>{oneTeam.school}</h4>
-        <p>Mascot: {oneTeam.name}</p>
-        <p>Location: {oneTeam.city}, {oneTeam.state}</p>
-        <br />
+      <div className="Space">
+        <div className="Card">
+          <br />
+          <h4>{oneTeam.school}</h4>
+          <p>Mascot: {oneTeam.name}</p>
+          <p>Location: {oneTeam.city}, {oneTeam.state}</p>
+          <br />
+        </div>
       </div>
     );
   }
@@ -43,7 +46,6 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Welcome/>
-        
         <TeamList/>
       </header>
     </div>
